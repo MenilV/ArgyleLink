@@ -15,16 +15,32 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:srcUrl="@{item.image}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
         <TextView
-            android:id="@+id/search_name"
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{item.data}"
-            app:layout_constraintStart_toStartOf="parent"
+            android:text="@{item.name}"
+            tools:text="Amazon"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Item Data"/>
+            app:layout_constraintStart_toEndOf="@id/image"/>
+
+        <TextView
+            android:id="@+id/kind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{item.kind}"
+            tools:text="Employer"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            app:layout_constraintStart_toEndOf="@id/image"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

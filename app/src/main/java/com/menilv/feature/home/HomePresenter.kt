@@ -1,6 +1,7 @@
 package com.menilv.feature.home
 
 import com.menilv.common.BasePresenter
+import com.menilv.feature.home.adapter.SearchItem
 import com.menilv.model.payload.SearchPayload
 import com.menilv.network.repository.SearchDataRepository
 import javax.inject.Inject
@@ -14,7 +15,7 @@ class HomePresenter @Inject constructor(
     override fun bindIntents() {
         val onHome = intent(HomeView::onLoad)
             .switchMapToViewState(
-                { searchDataRepository.fetch(SearchPayload("google")).map { it.toString() } },
+                { searchDataRepository.fetch(SearchPayload("google")).map { result -> result.results.map { SearchItem(it.name, it.kind, it.logoUrl) } } },
                 { HomeSuccessViewState(it) },
                 { throwable, _ -> HomeErrorViewState(throwable) }
             )

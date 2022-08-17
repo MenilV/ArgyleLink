@@ -5,6 +5,6 @@ import com.menilv.model.base.Entity
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class SearchItem(val data: String) : Entity<String>, Parcelable {
-    override fun id(): String = data
+data class SearchItem(val name: String, val kind: String, val image: String) : Entity<String>, Parcelable {
+    override fun id(): String = name + kind + image
 }
