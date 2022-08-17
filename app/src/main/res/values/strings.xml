@@ -1,0 +1,15 @@
+<resources>
+    <!-- Common -->
+    <string name="app_name">Argyle Link</string>
+    <string name="settings">settings</string>
+    <string name="permission">permission</string>
+    <string name="cancel">@android:string/cancel</string>
+    <string name="lack_of_permissions">Missing permission</string>
+
+    <!-- Errors -->
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="wrong_response">Wrong API response</string>
+    <string name="service_is_temporarily_unavailable">Service is temporarily unavailable</string>
+    <string name="migration_happening">Service is temporarily unavailable</string>
+
+</resources>
