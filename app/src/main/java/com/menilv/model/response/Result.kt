@@ -8,7 +8,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Result(
     @Json(name = "features")
-    val features: Features = Features(),
+    val features: Features? = Features(),
     @Json(name = "has_two_fa")
     val hasTwoFa: Boolean = false,
     @Json(name = "id")

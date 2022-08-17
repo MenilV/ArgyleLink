@@ -11,7 +11,7 @@ import com.menilv.model.base.Entity
 @BindingAdapter("android:data")
 fun <T : Entity<*>> setRecyclerViewProperties(recyclerView: RecyclerView, items: List<T>?) {
     if (recyclerView.adapter is BaseAdapter<*, *> && items != null) {
-        (recyclerView.adapter as BaseAdapter<T, *>).items = items
+        (recyclerView.adapter as BaseAdapter<T, *>).items = items.ifEmpty { listOf() }
     }
 }
 

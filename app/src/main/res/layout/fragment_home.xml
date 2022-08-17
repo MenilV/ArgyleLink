@@ -6,6 +6,8 @@
 
     <data>
 
+        <import type="android.view.View"/>
+
         <variable
             name="context"
             type="com.menilv.feature.home.HomeFragment"/>
@@ -13,26 +15,59 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginTop="24dp"
-        android:padding="8dp"
-        android:layout_height="match_parent">
+        android:layout_marginBottom="56dp"
+        android:padding="16dp"
+        android:animateLayoutChanges="true">
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:iconifiedByDefault="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryBackground="@null"
+            app:queryHint="Search for a link"
+            >
+
+            <requestFocus/>
+        </androidx.appcompat.widget.SearchView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_results"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:data="@{context.bindingData.data.results}"
+            android:visibility="@{context.bindingData.data.results.empty ? View.GONE: View.VISIBLE}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/search_view"
             tools:itemCount="4"
-            android:data="@{context.bindingData.data.result}"
             tools:listitem="@layout/vh_search"/>
+
+        <TextView
+            android:id="@+id/empty_state"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/no_results"
+            android:gravity="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:visibility="@{context.bindingData.data.results.empty ? View.VISIBLE: View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_view"
+            tools:visibility="visible"/>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:shadowColor="@color/colorPrimaryDark"
+            android:visibility="@{context.bindingData.data.loading ? View.VISIBLE: View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_view"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

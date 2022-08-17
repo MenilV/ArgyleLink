@@ -4,6 +4,7 @@ import com.menilv.common.BasePresenter
 import com.menilv.feature.home.adapter.SearchItem
 import com.menilv.model.payload.SearchPayload
 import com.menilv.network.repository.SearchDataRepository
+import io.reactivex.rxjava3.core.Observable
 import javax.inject.Inject
 
 class HomePresenter @Inject constructor(
@@ -13,13 +14,29 @@ class HomePresenter @Inject constructor(
     override fun getInitialState(): HomeFullViewState = HomeFullViewState()
 
     override fun bindIntents() {
-        val onHome = intent(HomeView::onLoad)
+        val onSearch = intent(HomeView::onSearch)
             .switchMapToViewState(
-                { searchDataRepository.fetch(SearchPayload("google")).map { result -> result.results.map { SearchItem(it.name, it.kind, it.logoUrl) } } },
+                {
+                    searchDataRepository.fetch(SearchPayload(it))
+                        .map { response ->
+                            response.results.map { result ->
+                                SearchItem(result.name, result.kind, result.logoUrl)
+                            }
+                        }
+                },
+                { HomeSuccessViewState(it) },
+                { throwable, _ -> HomeErrorViewState(throwable) },
+                { HomeLoadingViewState(true) }
+            )
+
+        val onReset = intent(HomeView::onReset)
+            .switchMapToViewState(
+                { Observable.just(listOf<SearchItem>())},
                 { HomeSuccessViewState(it) },
                 { throwable, _ -> HomeErrorViewState(throwable) }
             )
-        subscribeForViewStateChanges(onHome)
+
+        subscribeForViewStateChanges(onSearch, onReset)
     }
 
     override fun viewStateReducer(
@@ -27,7 +44,7 @@ class HomePresenter @Inject constructor(
         changes: HomeViewState
     ): HomeFullViewState {
         return when (changes) {
-            is HomeSuccessViewState -> previousState.copy(result = changes.result, error = null)
+            is HomeSuccessViewState -> previousState.copy(results = changes.results, error = null, loading = false)
             is HomeLoadingViewState -> previousState.copy(loading = changes.loading)
             is HomeErrorViewState -> previousState.copy(error = changes.error, loading = false)
         }

@@ -7,4 +7,5 @@
     <string name="wrong_response">Wrong API response</string>
     <string name="service_is_temporarily_unavailable">Service is temporarily unavailable</string>
     <string name="migration_happening">Service is temporarily unavailable</string>
+    <string name="no_results">Search for a link in the top search bar and the results will appear</string>
 </resources>
