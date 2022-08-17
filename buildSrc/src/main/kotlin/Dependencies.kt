@@ -15,7 +15,6 @@ object Versions {
 
     //region Dependencies
     const val core = "1.7.0"
-    const val coreSplashScreen = "1.0.0-rc01"
     const val appCompat = "1.4.1"
     const val material = "1.5.0"
     const val junit = "4.13.2"
@@ -46,11 +45,8 @@ object Library {
 
         object Ktx {
             val core by lazy { "androidx.core:core-ktx:${Versions.core}" }
-            val coreSplash by lazy { "androidx.core:core-splashscreen:${Versions.coreSplashScreen}" }
             val navigationFragment by lazy { "androidx.navigation:navigation-fragment-ktx:${Versions.nav}" }
             val navigationUi by lazy { "androidx.navigation:navigation-ui-ktx:${Versions.nav}" }
-            val navigationRuntime by lazy { "androidx.navigation:navigation-runtime-ktx:${Versions.nav}" }
-            val lifecycleReactive by lazy { "androidx.lifecycle:lifecycle-reactivestreams-ktx:${Versions.lifecycle}" }
         }
     }
 
@@ -74,11 +70,8 @@ object Library {
     object Other {
         val okHttp by lazy { "com.squareup.okhttp3:okhttp:${Versions.okhttp}" }
         val okHttpLoggingInterceptor by lazy { "com.squareup.okhttp3:logging-interceptor:${Versions.okkHttpLoggingInterceptor}" }
-
         val retrofit by lazy { "com.squareup.retrofit2:retrofit:${Versions.retrofit}" }
-        val retrofitConverterScalars by lazy { "com.squareup.retrofit2:converter-scalars:${Versions.retrofitConverterScalars}" }
         val retrofitAdapterRxJava3 by lazy { "com.squareup.retrofit2:adapter-rxjava3:${Versions.retrofitAdapterRxJava3}" }
-
         val moshi by lazy { "com.squareup.moshi:moshi:${Versions.moshi}" }
         val moshiKotlin by lazy { "com.squareup.moshi:moshi-kotlin:${Versions.moshiKotlin}" }
         val moshiConverter by lazy { "com.squareup.retrofit2:converter-moshi:${Versions.moshiConverter}" }

@@ -16,7 +16,6 @@ class SearchDataRepository @Inject constructor() :
             .search(payload.limit, payload.query)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .map { it }
             .toObservable()
     }
 }

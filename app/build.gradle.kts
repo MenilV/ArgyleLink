@@ -82,13 +82,8 @@ android {
 
     dependencies {
         implementation(Library.AndroidX.appCompat)
-        implementation(Library.AndroidX.lifecycleCommon)
-        implementation(Library.AndroidX.Ktx.lifecycleReactive)
         implementation(Library.AndroidX.Ktx.core)
-        implementation(Library.AndroidX.Ktx.coreSplash)
         implementation(Library.AndroidX.Ktx.navigationFragment)
-        implementation(Library.AndroidX.Ktx.navigationRuntime)
-        implementation(Library.AndroidX.Ktx.navigationUi)
 
         implementation(Library.Google.material)
         implementation(Library.Google.hilt)
@@ -108,7 +103,6 @@ android {
         implementation(Library.Other.moshiConverter)
         implementation(Library.Other.moshiAdapters)
         implementation(Library.Other.retrofit)
-        implementation(Library.Other.retrofitConverterScalars)
         implementation(Library.Other.retrofitAdapterRxJava3)
 
         testImplementation(TestLibrary.Test.junit)
