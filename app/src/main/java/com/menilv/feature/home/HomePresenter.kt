@@ -19,7 +19,7 @@ class HomePresenter @Inject constructor(
             .switchMapToViewState(
                 {
                     searchDataRepository.fetch(SearchPayload(it))
-                        .map { response -> response.toSearchItemList()}
+                        .map { response -> response.toSearchItemList() }
                 },
                 { HomeSuccessViewState(it) },
                 { throwable, _ -> HomeErrorViewState(throwable) },
@@ -28,7 +28,7 @@ class HomePresenter @Inject constructor(
 
         val onReset = intent(HomeView::onReset)
             .switchMapToViewState(
-                { Observable.just(listOf<SearchItem>())},
+                { Observable.just(listOf<SearchItem>()) },
                 { HomeSuccessViewState(it) },
                 { throwable, _ -> HomeErrorViewState(throwable) }
             )

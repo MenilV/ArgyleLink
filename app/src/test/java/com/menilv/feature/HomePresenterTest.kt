@@ -18,9 +18,9 @@ import org.junit.Test
 import org.mockito.ArgumentCaptor
 import org.mockito.Captor
 import org.mockito.Mock
-import org.mockito.Mockito.`when`
 import org.mockito.Mockito.atLeast
 import org.mockito.Mockito.verify
+import org.mockito.Mockito.`when`
 
 @UninstallModules(
     FragmentModule::class,
@@ -122,5 +122,4 @@ class HomePresenterTest @Inject constructor() : BaseTest() {
         // Finally
         presenter.detachView()
     }
-
 }

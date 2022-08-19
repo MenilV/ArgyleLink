@@ -23,7 +23,7 @@ class HomeFragment : BaseFragment<HomeFullViewState, FragmentHomeBinding>(R.layo
 
     override fun initUI() {
         super.initUI()
-        binding.recyclerResults.apply{
+        binding.recyclerResults.apply {
             adapter = searchAdapter
             addItemDecoration(DividerItemDecoration(requireContext(), OrientationHelper.VERTICAL))
         }
@@ -36,5 +36,4 @@ class HomeFragment : BaseFragment<HomeFullViewState, FragmentHomeBinding>(R.layo
         bindingData.data.set(viewState)
         showError(viewState.error)
     }
-
 }

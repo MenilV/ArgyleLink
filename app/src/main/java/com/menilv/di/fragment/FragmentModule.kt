@@ -6,5 +6,4 @@ import dagger.hilt.android.components.FragmentComponent
 
 @InstallIn(FragmentComponent::class)
 @Module
-open class FragmentModule {
-}
+open class FragmentModule

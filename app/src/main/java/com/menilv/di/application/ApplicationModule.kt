@@ -20,25 +20,24 @@ import javax.inject.Singleton
 @Module
 open class ApplicationModule {
 
-     @Singleton
-     @Provides
-     fun httpClient(httpClient: HttpClientImpl): HttpClient = httpClient
+    @Singleton
+    @Provides
+    fun httpClient(httpClient: HttpClientImpl): HttpClient = httpClient
 
-     @Singleton
-     @Provides
-     fun interceptor(interceptor: InterceptorImpl): Interceptor = interceptor
+    @Singleton
+    @Provides
+    fun interceptor(interceptor: InterceptorImpl): Interceptor = interceptor
 
-     @Singleton
-     @Provides
-     fun retrofit(retrofit: RetrofitClientImpl): RetrofitClient = retrofit
+    @Singleton
+    @Provides
+    fun retrofit(retrofit: RetrofitClientImpl): RetrofitClient = retrofit
 
-     @Singleton
-     @Provides
-     fun serializer(serializer: SerializerImpl): Serializer = serializer
+    @Singleton
+    @Provides
+    fun serializer(serializer: SerializerImpl): Serializer = serializer
 
-     @Singleton
-     @Provides
-     @ApiUrl
-     fun apiUrl(): String = BuildConfig.API
-
+    @Singleton
+    @Provides
+    @ApiUrl
+    fun apiUrl(): String = BuildConfig.API
 }

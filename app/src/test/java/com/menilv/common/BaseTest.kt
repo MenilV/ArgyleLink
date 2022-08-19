@@ -29,7 +29,7 @@ abstract class BaseTest {
     open fun setUp() {
         MockitoAnnotations.openMocks(this)
         webServer.dispatcher = getMockWebServerQueueDispatcher()
-        webServer.start(InetAddress.getByName("localhost"),8181)
+        webServer.start(InetAddress.getByName("localhost"), 8181)
     }
 
     @After
@@ -40,7 +40,7 @@ abstract class BaseTest {
 
     fun getJson(path: String): String {
         val absPath = "src/test/resources"
-        val file = File(absPath+path)
+        val file = File(absPath + path)
         return String(file.readBytes())
     }
 

@@ -8,4 +8,4 @@ import kotlinx.parcelize.Parcelize
 data class RequiredFields(
     @Json(name = "bank_account")
     val bankAccount: List<String> = listOf()
-): Parcelable
+) : Parcelable

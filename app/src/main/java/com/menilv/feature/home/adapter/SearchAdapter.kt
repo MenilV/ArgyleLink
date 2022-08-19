@@ -5,7 +5,8 @@ import com.menilv.common.BaseAdapter
 import io.reactivex.subjects.PublishSubject
 import javax.inject.Inject
 
-class SearchAdapter @Inject constructor() : BaseAdapter<SearchItem, SearchViewHolder>(),
+class SearchAdapter @Inject constructor() :
+    BaseAdapter<SearchItem, SearchViewHolder>(),
     SearchAdapterView {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         SearchViewHolder(parent, this)

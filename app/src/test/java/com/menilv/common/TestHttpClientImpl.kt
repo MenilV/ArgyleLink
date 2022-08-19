@@ -1,11 +1,10 @@
 package com.menilv.common
 
-
 import com.menilv.network.interceptor.Interceptor
 import com.menilv.network.repository.http.HttpClient
-import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
+import okhttp3.OkHttpClient
 
 class TestHttpClientImpl @Inject constructor(
     private val interceptor: Interceptor

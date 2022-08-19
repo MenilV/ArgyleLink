@@ -22,4 +22,4 @@ data class PayDistributionUpdate(
     val requiredFields: RequiredFields = RequiredFields(),
     @Json(name = "supported")
     val supported: Boolean = false
-): Parcelable
+) : Parcelable

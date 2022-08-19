@@ -1,5 +1,3 @@
 package com.menilv.network.common
 
-abstract class BaseInterceptor {
-
-}
+abstract class BaseInterceptor

@@ -29,8 +29,8 @@ class TestSchedulerRule : TestRule {
                 RxAndroidPlugins.setInitMainThreadSchedulerHandler { Schedulers.trampoline() }
                 try {
                     base.evaluate()
-                }catch (e: Exception){
-                    Log.e("e",e.message.toString())
+                } catch (e: Exception) {
+                    Log.e("e", e.message.toString())
                 } finally {
                     RxJavaPlugins.reset()
                     RxAndroidPlugins.reset()

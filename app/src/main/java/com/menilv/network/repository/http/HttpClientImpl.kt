@@ -3,11 +3,11 @@ package com.menilv.network.repository.http
 import android.content.Context
 import com.menilv.network.interceptor.Interceptor
 import dagger.hilt.android.qualifiers.ApplicationContext
-import okhttp3.Cache
-import okhttp3.OkHttpClient
 import java.io.File
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
+import okhttp3.Cache
+import okhttp3.OkHttpClient
 
 class HttpClientImpl @Inject constructor(
     private val interceptor: Interceptor,

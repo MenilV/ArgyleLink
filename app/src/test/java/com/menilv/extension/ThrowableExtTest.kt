@@ -10,10 +10,12 @@ class ThrowableExtTest {
     @Test
     fun `Exception should return expecting error message enum`() {
         // Given
-        val apiErrorException = ApiErrorException(ErrorMessageEnum.NO_INTERNET,
+        val apiErrorException = ApiErrorException(
+            ErrorMessageEnum.NO_INTERNET,
             Throwable("throwable")
         )
-        val genericDataException = GenericDataException(ErrorMessageEnum.WRONG_RESPONSE,
+        val genericDataException = GenericDataException(
+            ErrorMessageEnum.WRONG_RESPONSE,
             Throwable("throwable")
         )
         val otherException = Throwable("throwable")

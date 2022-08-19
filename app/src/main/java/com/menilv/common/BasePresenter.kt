@@ -13,7 +13,6 @@ import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.Subject
 import io.reactivex.subjects.UnicastSubject
-import java.util.*
 
 @Suppress("UNCHECKED_CAST")
 abstract class BasePresenter<V, VS, FVS : Parcelable>(private val startWithInitialState: Boolean = false) :

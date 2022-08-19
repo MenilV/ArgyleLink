@@ -15,7 +15,6 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
-
 @Module
 @InstallIn(SingletonComponent::class)
 class TestApplicationModule {
@@ -40,5 +39,4 @@ class TestApplicationModule {
     @Singleton
     @ApiUrl
     fun apiUrl(): String = "http://localhost:8181"
-
 }

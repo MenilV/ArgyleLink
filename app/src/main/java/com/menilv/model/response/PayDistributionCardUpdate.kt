@@ -8,4 +8,4 @@ import kotlinx.parcelize.Parcelize
 data class PayDistributionCardUpdate(
     @Json(name = "supported")
     val supported: Boolean = false
-): Parcelable
+) : Parcelable

@@ -3,7 +3,6 @@ package com.menilv.common
 import io.reactivex.observers.DisposableObserver
 import io.reactivex.subjects.Subject
 
-
 internal class DisposableIntentObserver<I>(private val subject: Subject<I>) : DisposableObserver<I>() {
 
     override fun onNext(value: I) {

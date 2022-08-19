@@ -7,7 +7,6 @@ import com.menilv.common.BaseView
 import kotlinx.parcelize.Parcelize
 import org.junit.Assert
 import org.junit.Test
-import java.util.*
 
 class EagerViewStartWithTest : BaseTest() {
 
@@ -52,7 +51,7 @@ class EagerViewStartWithTest : BaseTest() {
         val presenter = EagerPresenter()
         presenter.attachView(view)
         Assert.assertEquals(
-            Arrays.asList(
+            listOf(
                 "Before Intent 1 - Result 1",
                 "Intent 1 - Result 1",
                 "Intent 2 - Result 2"

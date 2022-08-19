@@ -25,6 +25,5 @@ class SearchResponseExtTest : BaseTest() {
             assert(it.size == response.results.size)
             assert(it[0].javaClass == SearchItem::class.java)
         }
-
     }
 }

@@ -16,7 +16,6 @@ fun SearchView.onTextChange(): Observable<String> {
                 }
                 return true
             }
-
         }
         this.setOnQueryTextListener(listener)
     }
@@ -26,7 +25,7 @@ fun SearchView.onTextChange(): Observable<String> {
         }
 }
 
-fun SearchView.onReset(): Observable<Unit>{
+fun SearchView.onReset(): Observable<Unit> {
     return Observable.create<Unit> { emitter ->
         val listener = SearchView.OnCloseListener {
             emitter.onNext(Unit)

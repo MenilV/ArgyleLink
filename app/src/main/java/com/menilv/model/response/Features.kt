@@ -10,4 +10,4 @@ data class Features(
     val payDistributionCardUpdate: PayDistributionCardUpdate = PayDistributionCardUpdate(),
     @Json(name = "pay_distribution_update")
     val payDistributionUpdate: PayDistributionUpdate = PayDistributionUpdate()
-): Parcelable
+) : Parcelable

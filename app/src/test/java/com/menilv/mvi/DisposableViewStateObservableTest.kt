@@ -4,7 +4,6 @@ import com.menilv.common.DisposableViewStateObserver
 import io.reactivex.Observable
 import io.reactivex.observers.TestObserver
 import io.reactivex.subjects.BehaviorSubject
-
 import org.junit.Assert
 import org.junit.Test
 

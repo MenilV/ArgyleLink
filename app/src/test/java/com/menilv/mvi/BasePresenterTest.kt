@@ -5,11 +5,11 @@ import com.menilv.common.BasePresenter
 import com.menilv.common.BaseTest
 import com.menilv.common.BaseView
 import io.reactivex.subjects.PublishSubject
+import java.util.Arrays
+import java.util.concurrent.atomic.AtomicInteger
 import kotlinx.parcelize.Parcelize
 import org.junit.Assert
 import org.junit.Test
-import java.util.*
-import java.util.concurrent.atomic.AtomicInteger
 
 class BasePresenterTest : BaseTest() {
     @Parcelize

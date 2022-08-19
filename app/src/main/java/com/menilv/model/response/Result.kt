@@ -31,6 +31,6 @@ data class Result(
     val statusDetails: String? = "",
     @Json(name = "type")
     val type: String = ""
-): Parcelable, Entity<String>{
-    override fun id()= id
+) : Parcelable, Entity<String> {
+    override fun id() = id
 }
