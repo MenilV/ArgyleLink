@@ -1,7 +1,8 @@
 package com.menilv.common
 
-import io.reactivex.rxjava3.observers.DisposableObserver
-import io.reactivex.rxjava3.subjects.BehaviorSubject
+import io.reactivex.observers.DisposableObserver
+import io.reactivex.subjects.BehaviorSubject
+
 
 internal class DisposableViewStateObserver<VS>(private val subject: BehaviorSubject<VS>) :
     DisposableObserver<VS>() {

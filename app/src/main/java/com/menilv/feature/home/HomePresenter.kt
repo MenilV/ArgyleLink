@@ -4,12 +4,12 @@ import com.menilv.common.BasePresenter
 import com.menilv.feature.home.adapter.SearchItem
 import com.menilv.model.payload.SearchPayload
 import com.menilv.network.repository.SearchDataRepository
-import io.reactivex.rxjava3.core.Observable
+import io.reactivex.Observable
 import javax.inject.Inject
 
 class HomePresenter @Inject constructor(
     private val searchDataRepository: SearchDataRepository
-) : BasePresenter<HomeView, HomeViewState, HomeFullViewState>() {
+) : BasePresenter<HomeView, HomeViewState, HomeFullViewState>(startWithInitialState = true) {
 
     override fun getInitialState(): HomeFullViewState = HomeFullViewState()
 

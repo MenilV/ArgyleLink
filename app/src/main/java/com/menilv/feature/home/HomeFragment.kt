@@ -9,7 +9,7 @@ import com.menilv.extension.onReset
 import com.menilv.extension.onTextChange
 import com.menilv.feature.home.adapter.SearchAdapter
 import dagger.hilt.android.AndroidEntryPoint
-import io.reactivex.rxjava3.core.Observable
+import io.reactivex.Observable
 import javax.inject.Inject
 
 @AndroidEntryPoint

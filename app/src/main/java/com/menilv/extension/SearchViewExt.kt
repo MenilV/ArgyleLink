@@ -1,7 +1,7 @@
 package com.menilv.extension
 
 import androidx.appcompat.widget.SearchView
-import io.reactivex.rxjava3.core.Observable
+import io.reactivex.Observable
 import java.util.concurrent.TimeUnit
 
 fun SearchView.onTextChange(): Observable<String> {

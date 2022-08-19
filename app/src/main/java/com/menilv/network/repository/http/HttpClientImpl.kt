@@ -3,11 +3,11 @@ package com.menilv.network.repository.http
 import android.content.Context
 import com.menilv.network.interceptor.Interceptor
 import dagger.hilt.android.qualifiers.ApplicationContext
+import okhttp3.Cache
+import okhttp3.OkHttpClient
 import java.io.File
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
-import okhttp3.Cache
-import okhttp3.OkHttpClient
 
 class HttpClientImpl @Inject constructor(
     private val interceptor: Interceptor,
@@ -20,10 +20,10 @@ class HttpClientImpl @Inject constructor(
             httpCacheDirectory.mkdir()
 
         val okHttpClientBuilder = OkHttpClient.Builder()
-            .connectTimeout(60, TimeUnit.SECONDS)
-            .writeTimeout(60, TimeUnit.SECONDS)
-            .readTimeout(60, TimeUnit.SECONDS)
-            .cache(Cache(httpCacheDirectory, 100 * 1024 * 1024)) // 100 MB
+            .connectTimeout(120, TimeUnit.SECONDS)
+            .writeTimeout(120, TimeUnit.SECONDS)
+            .readTimeout(120, TimeUnit.SECONDS)
+            .cache(Cache(httpCacheDirectory, 100L * 1024 * 1024)) // 100 MB
 
         interceptor.getApplicationInterceptors()
             .forEach {

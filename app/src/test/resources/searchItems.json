@@ -1,0 +1,108 @@
+{
+  "results": [
+    {
+      "id": "google_adsense",
+      "item_id": "017d0657-7295-a28c-1c61-75a802152958",
+      "name": "Google AdSense",
+      "type": "services",
+      "has_two_fa": true,
+      "is_disabled": false,
+      "kind": "creator",
+      "known_limitations": null,
+      "status": "healthy",
+      "status_details": null,
+      "logo_url": "https://res.cloudinary.com/argyle-media/image/upload/v1636629913/partner-logos/google_adsense.png",
+      "features": {
+        "pay_distribution_update": {
+          "supported": true,
+          "max_allocations": 1,
+          "amount_allocation": false,
+          "percent_allocation": true,
+          "amount_precision": null,
+          "percent_precision": null,
+          "action_types": [
+            "microdeposit_verification"
+          ],
+          "required_fields": {
+            "bank_account": [
+              "routing_number",
+              "account_number",
+              "account_type"
+            ]
+          }
+        },
+        "pay_distribution_card_update": {
+          "supported": false
+        }
+      }
+    },
+    {
+      "id": "gaggle",
+      "item_id": "01825ea9-b6c4-9b83-60e9-bad293a58861",
+      "name": "Gaggle",
+      "type": "services",
+      "has_two_fa": true,
+      "is_disabled": false,
+      "kind": "employer",
+      "known_limitations": "Due to platform limitations, data refresh may require user re-authentication.",
+      "status": "healthy",
+      "status_details": null,
+      "logo_url": "https://res.cloudinary.com/argyle-media/image/upload//v1590491285/partner-logos/gaggle.png",
+      "features": {
+        "pay_distribution_update": {
+          "supported": true,
+          "max_allocations": 4,
+          "amount_allocation": true,
+          "percent_allocation": true,
+          "amount_precision": "0.01",
+          "percent_precision": "1",
+          "action_types": [],
+          "required_fields": {
+            "bank_account": [
+              "routing_number",
+              "account_number",
+              "account_type"
+            ]
+          }
+        },
+        "pay_distribution_card_update": {
+          "supported": false
+        }
+      }
+    },
+    {
+      "id": "googie_car_wash",
+      "item_id": "01801d7f-aff3-abd3-b402-fc030a08a451",
+      "name": "Googie Car Wash",
+      "type": "services",
+      "has_two_fa": true,
+      "is_disabled": false,
+      "kind": "employer",
+      "known_limitations": null,
+      "status": "healthy",
+      "status_details": null,
+      "logo_url": "https://res.cloudinary.com/argyle-media/image/upload/partner-logos/googie_car_wash.png",
+      "features": {
+        "pay_distribution_update": {
+          "supported": true,
+          "max_allocations": 2,
+          "amount_allocation": true,
+          "percent_allocation": true,
+          "amount_precision": "0.01",
+          "percent_precision": "0.01",
+          "action_types": [],
+          "required_fields": {
+            "bank_account": [
+              "routing_number",
+              "account_number",
+              "account_type"
+            ]
+          }
+        },
+        "pay_distribution_card_update": {
+          "supported": false
+        }
+      }
+    }
+  ]
+}

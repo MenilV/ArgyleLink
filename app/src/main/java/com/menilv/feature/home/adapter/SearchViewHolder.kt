@@ -2,7 +2,7 @@ package com.menilv.feature.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.jakewharton.rxbinding4.view.clicks
+import com.jakewharton.rxbinding3.view.clicks
 import com.menilv.common.BaseViewHolder
 import com.menilv.databinding.VhSearchBinding
 

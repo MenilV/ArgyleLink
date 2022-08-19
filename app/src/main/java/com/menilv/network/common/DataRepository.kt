@@ -1,7 +1,7 @@
 package com.menilv.network.common
 
 import com.menilv.network.repository.retrofit.RetrofitClient
-import io.reactivex.rxjava3.core.Observable
+import io.reactivex.Observable
 import javax.inject.Inject
 
 abstract class DataRepository<P, R> {

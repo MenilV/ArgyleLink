@@ -1,7 +1,7 @@
 package com.menilv.network.api
 
 import com.menilv.model.response.SearchResponse
-import io.reactivex.rxjava3.core.Single
+import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 

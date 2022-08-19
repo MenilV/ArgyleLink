@@ -1,7 +1,8 @@
 package com.menilv.common
 
-import io.reactivex.rxjava3.observers.DisposableObserver
-import io.reactivex.rxjava3.subjects.Subject
+import io.reactivex.observers.DisposableObserver
+import io.reactivex.subjects.Subject
+
 
 internal class DisposableIntentObserver<I>(private val subject: Subject<I>) : DisposableObserver<I>() {
 

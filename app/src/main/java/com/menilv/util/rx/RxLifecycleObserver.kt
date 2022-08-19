@@ -3,7 +3,7 @@ package com.menilv.util.rx
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
-import io.reactivex.rxjava3.subjects.Subject
+import io.reactivex.subjects.Subject
 
 internal class RxLifecycleObserver(private val subject: Subject<Lifecycle.Event>) :
     DefaultLifecycleObserver {

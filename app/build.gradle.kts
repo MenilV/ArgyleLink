@@ -89,8 +89,8 @@ android {
         implementation(Library.Google.hilt)
         kapt(Library.Google.hiltCompiler)
 
-        implementation(Library.Rx.rxKotlin)
-        implementation(Library.Rx.rxAndroid)
+//        implementation(Library.Rx.rxKotlin)
+//        implementation(Library.Rx.rxAndroid)
         implementation(Library.Rx.rxBinding)
 
         implementation(Library.UI.glide)
@@ -103,10 +103,14 @@ android {
         implementation(Library.Other.moshiConverter)
         implementation(Library.Other.moshiAdapters)
         implementation(Library.Other.retrofit)
-        implementation(Library.Other.retrofitAdapterRxJava3)
+        implementation(Library.Other.retrofitAdapterRxJava2)
+        implementation(Library.Other.rxjavaAndroid)
 
         testImplementation(TestLibrary.Test.junit)
         testImplementation(TestLibrary.Test.hilt)
+        testImplementation(TestLibrary.Test.mockWebServer)
+        testImplementation(TestLibrary.Test.mockito)
+        testImplementation(TestLibrary.Test.roboelectric)
         kaptTest(TestLibrary.Test.hiltCompiler)
 
         androidTestImplementation(TestLibrary.AndroidTest.junitExt)

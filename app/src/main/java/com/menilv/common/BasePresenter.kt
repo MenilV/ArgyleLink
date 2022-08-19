@@ -5,14 +5,15 @@ import androidx.annotation.CallSuper
 import androidx.annotation.MainThread
 import com.menilv.BuildConfig
 import com.menilv.presenter.Presenter
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.core.Observable
-import io.reactivex.rxjava3.disposables.CompositeDisposable
-import io.reactivex.rxjava3.disposables.Disposable
-import io.reactivex.rxjava3.schedulers.Schedulers
-import io.reactivex.rxjava3.subjects.BehaviorSubject
-import io.reactivex.rxjava3.subjects.Subject
-import io.reactivex.rxjava3.subjects.UnicastSubject
+import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
+import io.reactivex.subjects.BehaviorSubject
+import io.reactivex.subjects.Subject
+import io.reactivex.subjects.UnicastSubject
+import java.util.*
 
 @Suppress("UNCHECKED_CAST")
 abstract class BasePresenter<V, VS, FVS : Parcelable>(private val startWithInitialState: Boolean = false) :
@@ -259,7 +260,10 @@ abstract class BasePresenter<V, VS, FVS : Parcelable>(private val startWithIniti
                     return@flatMap Observable.just(it)
                         .flatMap { source.invoke(it) }
                         .map { mapSuccess.invoke(it) }
-                        .onErrorReturn { mapError.invoke(it, value) }
+                        .onErrorReturn {
+                            it.printStackTrace()
+                            mapError.invoke(it, value)
+                        }
                         .startWith(Observable.just(mapLoading.invoke(it)))
                 }
         }

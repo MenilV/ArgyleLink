@@ -1,3 +1,5 @@
+import org.gradle.kotlin.dsl.provideDelegate
+
 object Versions {
     //region Kotlin
     const val kotlin = "1.6.21"
@@ -21,20 +23,24 @@ object Versions {
     const val junitExt = "1.1.3"
     const val espresso = "3.4.0"
     const val rxJava = "3.0.0"
-    const val rxBinding = "4.0.0"
+    const val rxBinding = "3.1.0"
     const val hilt = "2.42"
+    const val mockito = "4.4.0"
+    const val roboelectric = "4.8.1"
     const val nav = "2.4.2"
     const val lifecycle = "2.4.1"
     const val glide = "4.13.0"
     const val retrofit = "2.9.0"
     const val okhttp = "4.10.0"
     const val okkHttpLoggingInterceptor = "4.10.0"
+    const val mockWebServer = "4.10.0"
     const val moshi = "1.13.0"
     const val moshiKotlin = "1.13.0"
     const val moshiConverter = "2.9.0"
     const val moshiAdapters = "1.13.0"
     const val retrofitConverterScalars = "2.9.0"
-    const val retrofitAdapterRxJava3 = "2.9.0"
+    const val retrofitAdapterRxJava2 = "2.9.0"
+    const val rxjavaAndroid = "2.1.1"
     //endregion
 }
 
@@ -62,16 +68,15 @@ object Library {
     }
 
     object Rx {
-        val rxKotlin by lazy { "io.reactivex.rxjava3:rxkotlin:${Versions.rxJava}" }
-        val rxAndroid by lazy { "io.reactivex.rxjava3:rxandroid:${Versions.rxJava}" }
-        val rxBinding by lazy { "com.jakewharton.rxbinding4:rxbinding-core:${Versions.rxBinding}" }
+        val rxBinding by lazy { "com.jakewharton.rxbinding3:rxbinding:${Versions.rxBinding}" }
     }
 
     object Other {
         val okHttp by lazy { "com.squareup.okhttp3:okhttp:${Versions.okhttp}" }
         val okHttpLoggingInterceptor by lazy { "com.squareup.okhttp3:logging-interceptor:${Versions.okkHttpLoggingInterceptor}" }
         val retrofit by lazy { "com.squareup.retrofit2:retrofit:${Versions.retrofit}" }
-        val retrofitAdapterRxJava3 by lazy { "com.squareup.retrofit2:adapter-rxjava3:${Versions.retrofitAdapterRxJava3}" }
+        val retrofitAdapterRxJava2 by lazy { "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofitAdapterRxJava2}" }
+        val rxjavaAndroid by lazy { "io.reactivex.rxjava2:rxandroid:${Versions.rxjavaAndroid}" }
         val moshi by lazy { "com.squareup.moshi:moshi:${Versions.moshi}" }
         val moshiKotlin by lazy { "com.squareup.moshi:moshi-kotlin:${Versions.moshiKotlin}" }
         val moshiConverter by lazy { "com.squareup.retrofit2:converter-moshi:${Versions.moshiConverter}" }
@@ -85,6 +90,9 @@ object TestLibrary {
         val junit by lazy { "junit:junit:${Versions.junit}" }
         val hilt by lazy { "com.google.dagger:hilt-android-testing:${Versions.hilt}" }
         val hiltCompiler by lazy { "com.google.dagger:hilt-compiler:${Versions.hilt}" }
+        val mockWebServer by lazy { "com.squareup.okhttp3:mockwebserver:${Versions.mockWebServer}" }
+        val mockito by lazy { "org.mockito:mockito-core:${Versions.mockito}" }
+        val roboelectric by lazy { "org.robolectric:robolectric:${Versions.roboelectric}" }
     }
 
     object AndroidTest {
