@@ -1,13 +1,8 @@
 name: Debug build CI
 on:
-  pull_request:
+  push:
     branches:
       - 'master'
-    types:
-      - opened
-      - reopened
-      - synchronize
-      - ready_for_review
 
 jobs:
   test_and_build:
@@ -38,12 +33,3 @@ jobs:
         run: bash ./gradlew -Pci --console=plain test --stacktrace
       - name: Build debug APK
         run: bash ./gradlew assembleDebug --stacktrace
-      - uses: r0adkll/sign-android-release@v1
-        name: Sign app bundle
-        id: sign_app
-        with:
-          releaseDirectory: app/build/outputs/apk/debug
-          signingKeyBase64: ${{ secrets.KEYSTORE_BASE64 }}
-          alias: ${{ secrets.KEY_ALIAS }}
-          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
