@@ -47,12 +47,10 @@ object Versions {
 object Library {
     object AndroidX {
         val appCompat by lazy { "androidx.appcompat:appcompat:${Versions.appCompat}" }
-        val lifecycleCommon by lazy { "androidx.lifecycle:lifecycle-common-java8:${Versions.lifecycle}" }
 
         object Ktx {
             val core by lazy { "androidx.core:core-ktx:${Versions.core}" }
             val navigationFragment by lazy { "androidx.navigation:navigation-fragment-ktx:${Versions.nav}" }
-            val navigationUi by lazy { "androidx.navigation:navigation-ui-ktx:${Versions.nav}" }
         }
     }
 
@@ -82,7 +80,6 @@ object Library {
         val moshiConverter by lazy { "com.squareup.retrofit2:converter-moshi:${Versions.moshiConverter}" }
         val moshiAdapters by lazy { "com.squareup.moshi:moshi-adapters:${Versions.moshiAdapters}" }
     }
-
 }
 
 object TestLibrary {

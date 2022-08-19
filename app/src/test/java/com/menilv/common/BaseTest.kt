@@ -1,6 +1,8 @@
 package com.menilv.common
 
 import androidx.annotation.CallSuper
+import java.io.File
+import java.net.InetAddress
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import okhttp3.mockwebserver.QueueDispatcher
@@ -14,8 +16,6 @@ import org.mockito.Mockito.validateMockitoUsage
 import org.mockito.MockitoAnnotations
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
-import java.io.File
-import java.net.InetAddress
 
 @Config(application = TestApp_Application::class)
 @RunWith(RobolectricTestRunner::class)
@@ -23,8 +23,6 @@ abstract class BaseTest {
     @get:Rule
     val testSchedulerRule = TestSchedulerRule()
     protected val webServer: MockWebServer = MockWebServer()
-
-
 
     @Before
     @CallSuper

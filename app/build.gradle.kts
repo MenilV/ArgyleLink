@@ -88,11 +88,7 @@ android {
         implementation(Library.Google.material)
         implementation(Library.Google.hilt)
         kapt(Library.Google.hiltCompiler)
-
-//        implementation(Library.Rx.rxKotlin)
-//        implementation(Library.Rx.rxAndroid)
         implementation(Library.Rx.rxBinding)
-
         implementation(Library.UI.glide)
         kapt(Library.UI.glideCompiler)
 

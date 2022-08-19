@@ -7,7 +7,7 @@ import org.junit.Test
 class ErrorMessageExtTest {
 
     @Test
-    fun testInitialState() {
+    fun `Given error message enum should return expecting message`() {
         // Given
 
         // When

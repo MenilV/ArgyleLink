@@ -1,6 +1,7 @@
 package com.menilv.feature.home
 
 import com.menilv.common.BasePresenter
+import com.menilv.extension.toSearchItemList
 import com.menilv.feature.home.adapter.SearchItem
 import com.menilv.model.payload.SearchPayload
 import com.menilv.network.repository.SearchDataRepository
@@ -18,11 +19,7 @@ class HomePresenter @Inject constructor(
             .switchMapToViewState(
                 {
                     searchDataRepository.fetch(SearchPayload(it))
-                        .map { response ->
-                            response.results.map { result ->
-                                SearchItem(result.name, result.kind, result.logoUrl)
-                            }
-                        }
+                        .map { response -> response.toSearchItemList()}
                 },
                 { HomeSuccessViewState(it) },
                 { throwable, _ -> HomeErrorViewState(throwable) },
