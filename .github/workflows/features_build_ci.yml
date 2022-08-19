@@ -30,7 +30,7 @@ jobs:
       - name: Run detekt
         run: bash ./gradlew detekt
       - name: Unit tests
-        run: bash ./gradlew -Pci --console=plain test --stacktrace
+        run: bash ./gradlew -Pci --console=plain testDebug --stacktrace
       - name: Instrumented tests
         run: bash ./gradlew -Pci --console=plain connectedAndroidTest --stacktrace
       - name: Build debug APK
